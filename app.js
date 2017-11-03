@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 var sqlite3 = require('sqlite3').verbose();
-var db = new sqlite3.Database('db/movie.db');
+var db = new sqlite3.Database('./db/movie.db');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -13,8 +13,8 @@ app.set('view engine', 'ejs');
 
 app.get('/movies', function(req,res) {
 db.all(`SELECT * FROM Movies
-  LEFT JOIN ProductionHouse ON Movies.id=ProductionHouse.id `,function(err,rowsmovie,rowsPH){
-    res.render('movie',{rowsmovie},{rowsPH});
+  LEFT JOIN ProductionHouses ON Movies.id = ProductionHouses.id `,function(err,rowsmovie){
+    res.render('movie',{rowsmovie});
   })
 })
 
@@ -24,8 +24,8 @@ app.get('/movies/edit/:id',function(req,res){
 })
 
 app.get('/prodHouses', function(req,res){
-  db.all(`SELECT * FROM ProductionHouse`,function(err,rows){
-    res.render('prodHouse',{rows});
+  db.all(`SELECT * FROM ProductionHouses`,function(err,rows){
+    res.render('productionHouse',{rows});
   })
 })
 
