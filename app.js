@@ -12,7 +12,7 @@ app.get('/movies',function(req,res){
   res.render('movies')
 })
 
-app.get('/prodHouse',),function(req,res){
+app.get('/prodHouse',function(req,res){
   res.render('productionHouse')
 })
 
