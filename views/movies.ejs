@@ -5,18 +5,28 @@
     <title>Movies</title>
   </head>
   <body>
-    <h1><%=ini halaman movies%></h1>
-    <table>
-      <%for(let i=0;i<rowsmovies;i++){%>
+    <table border="1">
+      <tr>
+        <td>ID</td>
+        <td>name</td>
+        <td>release</td>
+        <td>genres</td>
+        <td>prodHouses Name</td>
+      </tr>
+
         <tr>
-        <td><%=rowsmovies[i].id%></td>
-        <td><%=rowsmovies[i].name%></td>
-        <td><%=rowsmovies[i].released_year%></td>
-        <td><%=rowsmovies[i].genre%></td>
-        <td><%=rowsPH[i].nama_prodHouse%></td>
-        <td><input type="text" name="" value=""></td>
+          <%rowsMovie.forEach((list)=>{%>
+        <tr>
+        <td><%=list.id%></td>
+        <td><%=list.name%></td>
+        <td><%=list.released_year%></td>
+        <td><%=list.genre%></td>
+        <td><%=list.name_prodHouse%></td>
+        <td><a href="/movies/edit/<%=list.id%>"> Edit </td>
+      <td><a href="/movies/delete/<%=list.id%>"> Delete </td>
         </tr>
-      <%}%>
+      <%})%>
+        </tr>
     </table>
   </body>
 </html>

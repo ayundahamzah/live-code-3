@@ -5,12 +5,12 @@
     <title>Production House</title>
   </head>
   <body>
-    <table>
-      <%for(let i=0;i<rows;i++){%>
+    <table border="1">
+      <%for(let i=0;i<rowsProd.length;i++){%>
         <tr>
-        <td><%=rows[i].id%></td>
-        <td><%=rows[i].nama_prodHouse%></td>
-        <td><%=rows[i].origin_city%></td>
+        <td><%=rowsProd[i].id%></td>
+        <td><%=rowsProd[i].name_prodHouse%></td>
+        <td><%=rowsProd[i].origin_city%></td>
         </tr>
       <%}%>
     </table>
