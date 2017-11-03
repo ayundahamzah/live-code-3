@@ -2,9 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Movies</title>
   </head>
   <body>
-    <%=ini halaman movies%>
+    <h1><%=ini halaman movies%></h1>
+    <table>
+      <%for(let i=0;i<rowsmovies;i++){%>
+        <tr>
+        <td><%=rowsmovies[i].id%></td>
+        <td><%=rowsmovies[i].name%></td>
+        <td><%=rowsmovies[i].released_year%></td>
+        <td><%=rowsmovies[i].genre%></td>
+        <td><%=rowsPH[i].nama_prodHouse%></td>
+        <td><input type="text" name="" value=""></td>
+        </tr>
+      <%}%>
+    </table>
   </body>
 </html>

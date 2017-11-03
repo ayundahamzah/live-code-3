@@ -2,9 +2,20 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Production House</title>
   </head>
   <body>
-    <%=Halaman Prod.House%>
+    <h1><%=Halaman Prod.House%></h1>
+    <table>
+      <%for(let i=0;i<rows;i++){%>
+        <tr>
+        <td><%=rows[i].id%></td>
+        <td><%=rows[i].nama_prodHouse%></td>
+        <td><%=rows[i].origin_city%></td>
+        </tr>
+      <%}%>
+    </table>
+
+
   </body>
 </html>
